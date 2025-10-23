@@ -42,11 +42,19 @@ AGENT__AGENT_NAME="Agent"
 MODEL__FAST_MODEL="mistral"
 ```
 
-- update Modelfile-template to use one of the existing models
+- update Modelfile-template to use one of the existing models, update "FROM xxx" line to use mistral model
 ```
-Update "FROM xxx" line to use mistral model
 FROM mistral
 
+```
+
+- set up python virutal enviroment if needed
+```
+source .venv/bin/activate
+```
+
+```
+ollama create ragmain -f Modelfile-template
 ```
 
 
