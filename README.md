@@ -42,13 +42,16 @@ AGENT__AGENT_NAME="Agent"
 MODEL__FAST_MODEL="mistral"
 ```
 
-- update Modelfile-template to use one of the existing models
+- update Modelfile-template to use one of the existing models, update "FROM xxx" line to use mistral model
 ```
-Update "FROM xxx" line to use mistral model
 FROM mistral
 
 ```
 
+- set up python virutal enviroment if needed
+```
+source .venv/bin/activate
+```
 
 - run the command to create new custom llm to use
 
@@ -56,7 +59,15 @@ FROM mistral
 ollama create ragmain -f Modelfile-template
 ```
 
-- (optional) scrape PDFs. See section on this below
+- (optional) scrape PDFs. This is an offline preprocessing step that must be completed before the conversational agent can reference your PDF collection during interactions.
+
+```
+./scripts/scrape-pdf-list.sh /path-to-pdf-folder/
+python src/ingest-pdf.py
+#or use uv to run the script
+uv run src/ingest-pdf.py
+```
+  
 
 ### Run
 
