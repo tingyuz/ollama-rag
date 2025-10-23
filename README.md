@@ -64,7 +64,7 @@ ollama create ragmain -f Modelfile-template
 ```
 ./scripts/scrape-pdf-list.sh /path-to-pdf-folder/
 python src/ingest-pdf.py
-#of use uv to run the script
+#or use uv to run the script
 uv run src/ingest-pdf.py
 ```
   
