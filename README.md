@@ -53,18 +53,21 @@ FROM mistral
 source .venv/bin/activate
 ```
 
-```
-ollama create ragmain -f Modelfile-template
-```
-
-
 - run the command to create new custom llm to use
 
 ```
 ollama create ragmain -f Modelfile-template
 ```
 
-- (optional) scrape PDFs. See section on this below
+- (optional) scrape PDFs. This is an offline preprocessing step that must be completed before the conversational agent can reference your PDF collection during interactions.
+
+```
+./scripts/scrape-pdf-list.sh /path-to-pdf-folder/
+python src/ingest-pdf.py
+#of use uv to run the script
+uv run src/ingest-pdf.py
+```
+  
 
 ### Run
 
