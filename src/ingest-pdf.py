@@ -1,5 +1,5 @@
 from langchain_community.embeddings import FastEmbedEmbeddings
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.vectorstores.utils import filter_complex_metadata
 from langchain_community.document_loaders import PyPDFLoader
 from tinydb import TinyDB, where
