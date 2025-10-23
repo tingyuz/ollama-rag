@@ -42,13 +42,27 @@ AGENT__AGENT_NAME="Agent"
 MODEL__FAST_MODEL="mistral"
 ```
 
+- update Modelfile-template to use one of the existing models
+```
+Update "FROM xxx" line to use mistral model
+FROM mistral
+
+```
+
+
+- run the command to create new custom llm to use
+
+```
+ollama create ragmain -f Modelfile-template
+```
+
 - (optional) scrape PDFs. See section on this below
 
 ### Run
 
 _Make sure Ollama service is running before running._
 
-- `uv run` - launches the chatbot in your terminal.
+- `uv run run` - launches the chatbot in your terminal.
 
 ### Uninstall
 
