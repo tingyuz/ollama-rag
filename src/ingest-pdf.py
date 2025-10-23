@@ -1,12 +1,12 @@
 from langchain_community.embeddings import FastEmbedEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain.vectorstores.utils import filter_complex_metadata
+from langchain_community.vectorstores.utils import filter_complex_metadata
 from langchain_community.document_loaders import PyPDFLoader
 from tinydb import TinyDB, where
 import re, math
 import logging
 from pathlib import Path
-from converse import Retriever
+from src.converse import Retriever
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -74,7 +74,7 @@ class PdfIngestor:
     def ingest_pdfs_from_file(self, filename: str):
         with open(filename) as fp:
             pdf_files = fp.readlines()
-        
+
         list_size = len(pdf_files)
         logging.info(f"Number of PDFs: {list_size}")
 
